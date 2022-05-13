@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "module": "ES6",
+    "strict": true,
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": false,
+    "forceConsistentCasingInFileNames": true,
+    "declarationMap": false,
+    "baseUrl": "./",                   /* Base directory to resolve non-absolute module names. */
+    "paths": {
+      "SRC/*": ["./src/*"],
+      "SCRIPT/*": ["./src/script/*"],
+      "COMPONENT/*": ["./src/script/component/*"],
+      "LIB/*": ["./src/script/lib/*"]
+    },    
+    "moduleResolution": "Node",
+    "jsx": "react",
+    "lib": ["dom"],
+    "typeRoots": [
+      "./src/@types",
+      "./node_modules/@types"
+    ]
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
