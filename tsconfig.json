@@ -13,8 +13,8 @@
     "paths": {
       "SRC/*": ["./src/*"],
       "SCRIPT/*": ["./src/script/*"],
-      "COMPONENT/*": ["./src/script/component/*"],
-      "LIB/*": ["./src/script/lib/*"]
+      "LIB/*": ["./src/script/lib/*"],
+      "COMPO/*": ["./src/script/compo/*"]
     },    
     "moduleResolution": "Node",
     "jsx": "react",
@@ -25,6 +25,7 @@
     ]
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "src/*"
   ]
 }

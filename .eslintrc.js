@@ -1,25 +1,37 @@
+const path = require("node:path/win32");
+
 module.exports = {
-    "env": {
-        "browser": true,
-        "es2021": true
+    'env': {
+        'browser': true,
+        'es2021': true,
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        'extends': [
+        'plugin:react/recommended',
+        'google',
     ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
+        'parser': '@typescript-eslint/parser',
+        'parserOptions': {
+        'ecmaFeatures': {
+            'jsx': true,
         },
-        "ecmaVersion": "latest",
-        "sourceType": "module"
+        'ecmaVersion': 'latest',
+        'sourceType': 'module',
     },
-    "plugins": [
-        "react",
-        "@typescript-eslint"
+    'plugins': [
+        'react',
+        '@typescript-eslint',
     ],
-    "rules": {
+    'rules': {
+        "import/no-relative-parent-imports": "error"
+    },
+    settings: {
+        react: {
+            version: 'detect'
+        },
+        'import/resolver': {
+            webpack: {
+                config: path.join(__dirname, 'webpack.config.js')
+            }
+        }
     }
-}
+};

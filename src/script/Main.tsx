@@ -14,6 +14,6 @@ class Main {
     }
 
     private static render (): void {
-
+        
     }
 }
