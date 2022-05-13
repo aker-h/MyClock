@@ -1,12 +1,14 @@
+import React from 'react';
 import { Root, createRoot } from 'react-dom/client';
 
-// import 
+import Clock from 'COMPO/Clock';
 
 class Main {
     private static wrapper: Root | null;
 
     public static main (args: string[]): void {
         Main.getRoot();
+        Main.render();
     }
 
     private static getRoot (): void {
@@ -14,6 +16,8 @@ class Main {
     }
 
     private static render (): void {
-        
+        Main.wrapper?.render(<Clock/>)
     }
 }
+
+Main.main(['This is entry point.']);

@@ -86,7 +86,27 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\n\r\n// import \r\nclass Main {\r\n    static main(args) {\r\n        Main.getRoot();\r\n    }\r\n    static getRoot() {\r\n        Main.wrapper = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_0__.createRoot)(document.getElementById('wrapper'));\r\n    }\r\n    static render() {\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://myclock/./src/script/Main.tsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\n/* harmony import */ var COMPO_Clock__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! COMPO/Clock */ \"./src/script/compo/Clock.js\");\n\r\n\r\n\r\nclass Main {\r\n    static main(args) {\r\n        Main.getRoot();\r\n        Main.render();\r\n    }\r\n    static getRoot() {\r\n        Main.wrapper = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(document.getElementById('wrapper'));\r\n    }\r\n    static render() {\r\n        Main.wrapper?.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(COMPO_Clock__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null));\r\n    }\r\n}\r\nMain.main(['This is entry point.']);\r\n\n\n//# sourceURL=webpack://myclock/./src/script/Main.tsx?");
+
+/***/ }),
+
+/***/ "./src/script/compo/Clock.js":
+/*!***********************************!*\
+  !*** ./src/script/compo/Clock.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var LIB_Fix__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! LIB/Fix */ \"./src/script/lib/Fix.js\");\n\r\n\r\nconst Clock = (props) => {\r\n    let [lH, setLH] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]), [rH, setrH] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]), [lM, setLM] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]), [rM, setRM] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]), [lS, setLS] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]), [rS, setRS] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);\r\n    class Init {\r\n        constructor() {\r\n            this.now = new Date();\r\n            this.hours = [];\r\n            this.minutes = [];\r\n            this.seconds = [];\r\n            this.initHours();\r\n            this.initMinutes();\r\n            this.initSeconds();\r\n        }\r\n        initHours() {\r\n            let nowHours = this.now.getHours();\r\n            for (let i = nowHours; i < 24; i++) {\r\n                this.hours.push((0,LIB_Fix__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(i));\r\n            }\r\n            for (let i = 0; i < nowHours; i++) {\r\n                this.hours.push((0,LIB_Fix__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(i));\r\n            }\r\n            console.log(`${this.hours}`);\r\n        }\r\n        initMinutes() {\r\n            let nowMinutes = this.now.getMinutes();\r\n            for (let i = nowMinutes; i < 60; i++) {\r\n                this.minutes.push((0,LIB_Fix__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(i));\r\n            }\r\n            for (let i = 0; i < nowMinutes; i++) {\r\n                this.minutes.push((0,LIB_Fix__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(i));\r\n            }\r\n            console.log(`${this.minutes}`);\r\n        }\r\n        initSeconds() {\r\n            let nowSeconds = this.now.getSeconds();\r\n            for (let i = nowSeconds; i < 60; i++) {\r\n                this.minutes.push((0,LIB_Fix__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(i));\r\n            }\r\n            for (let i = 0; i < nowSeconds; i++) {\r\n                this.minutes.push((0,LIB_Fix__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(i));\r\n            }\r\n            console.log(`${this.seconds}`);\r\n        }\r\n        initLH() { }\r\n        initRH() { }\r\n        initLM() { }\r\n        initRM() { }\r\n        initLS() { }\r\n        initRS() { }\r\n    }\r\n    new Init();\r\n    return react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Clock);\r\n\n\n//# sourceURL=webpack://myclock/./src/script/compo/Clock.js?");
+
+/***/ }),
+
+/***/ "./src/script/lib/Fix.js":
+/*!*******************************!*\
+  !*** ./src/script/lib/Fix.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ fix)\n/* harmony export */ });\nfunction fix(num) {\r\n    let result = `0${num}`;\r\n    return result.slice(-2);\r\n}\r\n\n\n//# sourceURL=webpack://myclock/./src/script/lib/Fix.js?");
 
 /***/ })
 
@@ -120,6 +140,35 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
